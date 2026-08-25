@@ -32,7 +32,7 @@ p{color:var(--muted);line-height:1.7}
 .site-header{height:78px;position:sticky;top:0;z-index:50;background:rgba(244,241,233,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(17,17,17,.06)}
 .header-inner{width:min(1320px,calc(100% - 48px));height:100%;margin:0 auto;display:flex;align-items:center;gap:32px}
 .brand{display:flex;align-items:center;text-decoration:none;margin-right:auto}
-.brand img{width:165px;display:block}
+.brand img{width:auto;height:54px;max-width:210px;display:block;object-fit:contain}
 .desktop-nav{display:flex;gap:28px}
 .desktop-nav a{text-decoration:none;font-size:12px;font-weight:600}
 .header-cta{background:#171717;color:#fff;text-decoration:none;padding:14px 18px;font-size:12px;font-weight:700}
@@ -506,4 +506,14 @@ p{color:var(--muted);line-height:1.7}
   .beyond-brokerage :is(.eyebrow,.kicker,.section-label){
     margin-bottom:16px;
   }
+}
+
+/* Header logo — Orizon Benefits */
+.site-header .brand{display:flex;align-items:center;min-width:0}
+.site-header .brand img{height:54px;width:auto;max-width:210px;object-fit:contain}
+@media(max-width:820px){
+  .site-header .brand img{height:44px;max-width:175px}
+}
+@media(max-width:560px){
+  .site-header .brand img{height:40px;max-width:160px}
 }
