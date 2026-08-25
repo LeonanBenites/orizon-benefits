@@ -25,3 +25,24 @@ form?.addEventListener('submit', (e) => {
   e.preventDefault();
   form.querySelector('.form-status').textContent = 'Formulário demonstrativo. Integração com CRM/WhatsApp pode ser conectada na versão de produção.';
 });
+
+
+// Animação da linha dourada dos quatro pilares.
+(() => {
+  const journey = document.getElementById('jornadaOrizon');
+  if (!journey) return;
+
+  if (!('IntersectionObserver' in window)) {
+    journey.classList.add('is-visible');
+    return;
+  }
+
+  const observer = new IntersectionObserver(([entry], obs) => {
+    if (entry.isIntersecting) {
+      journey.classList.add('is-visible');
+      obs.disconnect();
+    }
+  }, { threshold: 0.2 });
+
+  observer.observe(journey);
+})();
