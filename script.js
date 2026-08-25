@@ -1,48 +1,38 @@
-const menuBtn = document.querySelector('.menu-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-menuBtn?.addEventListener('click', () => {
-  const open = menuBtn.getAttribute('aria-expanded') === 'true';
-  menuBtn.setAttribute('aria-expanded', String(!open));
-  mobileMenu.hidden = open;
-});
-mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  mobileMenu.hidden = true;
-  menuBtn.setAttribute('aria-expanded', 'false');
-}));
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-const form = document.getElementById('leadForm');
-form?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  form.querySelector('.form-status').textContent = 'Formulário demonstrativo. Integração com CRM/WhatsApp pode ser conectada na versão de produção.';
-});
-
-
-// Animação da linha dourada dos quatro pilares.
 (() => {
-  const journey = document.getElementById('jornadaOrizon');
-  if (!journey) return;
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
 
-  if (!('IntersectionObserver' in window)) {
-    journey.classList.add('is-visible');
-    return;
+  items.forEach(el => observer.observe(el));
+
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
-  const observer = new IntersectionObserver(([entry], obs) => {
-    if (entry.isIntersecting) {
-      journey.classList.add('is-visible');
-      obs.disconnect();
-    }
-  }, { threshold: 0.2 });
-
-  observer.observe(journey);
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
+  }
 })();
