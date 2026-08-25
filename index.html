@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
 
@@ -73,28 +77,51 @@
     </div>
   </section>
 
-  <section class="thesis section-pad" id="tese">
+  <section class="thesis section-pad beyond-brokerage" id="tese">
     <div class="container thesis-grid">
       <div class="thesis-media reveal">
-        <span class="eyebrow">MUITO ALÉM DA CORRETAGEM</span>
+        
         <figure>
           <img src="assets/reuniao-estrategica.jpg" alt="Reunião estratégica com análise de indicadores">
         </figure>
       </div>
 
       <div class="thesis-copy reveal delay-1">
-        <h2>Contratar é apenas uma etapa da jornada.</h2>
-        <p>O benefício continua gerando decisões depois da assinatura do contrato. Custos evoluem, a utilização muda, novas necessidades aparecem e a renovação começa a ser construída muito antes da data-base.</p>
-        <p>A proposta da Orizon é acompanhar esse ciclo conectando produto, operação, informação e saúde da população.</p>
+        <span class="eyebrow">MUITO ALÉM DA CORRETAGEM</span><h2>Contratar é apenas uma etapa da jornada.</h2>
+        <p>Custos evoluem, a utilização muda, novas necessidades aparecem e a próxima renovação começa muito antes da data-base. A Orizon conecta essas etapas em uma gestão contínua.</p>
       </div>
     </div>
   </section>
 
   <section class="architecture section-pad">
-    <div class="container architecture-head reveal">
-      <span class="eyebrow">UMA VISÃO INTEGRADA</span>
-      <h2>Quatro dimensões que fazem parte da mesma decisão.</h2>
-      <p>Externamente, a arquitetura é simples: entender o benefício, operar bem, ler o que está acontecendo e olhar para a população por trás dos indicadores.</p>
+    <div class="container architecture-head architecture-head-with-tesseract reveal">
+      <div class="architecture-tesseract" aria-hidden="true">
+        <div class="tesseract-vector-stage">
+          <svg id="orizonTesseract" viewBox="0 0 320 320" role="img" aria-label="Tesseract animado">
+            <defs>
+              <linearGradient id="orizGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#d9bb78"/>
+                <stop offset="45%" stop-color="#b28a3f"/>
+                <stop offset="100%" stop-color="#8e6a2f"/>
+              </linearGradient>
+              <filter id="orizSoftGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="1.15" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <g class="tesseract-edges"></g>
+            <g class="tesseract-points"></g>
+          </svg>
+        </div>
+      </div>
+      <div class="architecture-title">
+        <span class="eyebrow">UMA VISÃO INTEGRADA</span>
+        <h2>Quatro dimensões. Uma única visão de gestão.</h2>
+        <p>Benefícios, operação, informação e saúde fazem parte da mesma jornada.</p>
+      </div>
     </div>
 
     <div class="container architecture-flow reveal">
@@ -122,19 +149,15 @@
         <p>A população.</p>
       </div>
     </div>
-
-    <div class="container architecture-note reveal">
-      <span>Uma única visão de gestão.</span>
-    </div>
   </section>
 
   <section class="solutions section-pad" id="solucoes">
     <div class="container section-head-two reveal">
       <div>
         <span class="eyebrow">BENEFÍCIOS</span>
-        <h2>O básico precisa estar bem estruturado.</h2>
+        <h2>Tudo começa com benefícios bem estruturados.</h2>
       </div>
-      <p>A homepage mantém foco em benefícios corporativos. Outras linhas existem como complemento, sem diluir a proposta principal da marca.</p>
+      <p>Saúde, odonto, vida e benefícios flexíveis formam a base da estratégia. Outras soluções podem complementar o desenho conforme as necessidades de cada empresa.</p>
     </div>
 
     <div class="container benefits-grid">
@@ -175,7 +198,7 @@
       <div class="operations-copy reveal">
         <span class="eyebrow">GESTÃO OPERACIONAL</span>
         <h2>Gestão que acontece todos os dias.</h2>
-        <p>Grande parte da experiência com benefícios acontece fora da renovação. Cadastro, faturamento, atendimento e processos administrativos influenciam diretamente a rotina do RH e dos colaboradores.</p>
+        <p>Cadastro, faturamento, atendimento e processos administrativos fazem parte da rotina contínua dos benefícios.</p>
         <a class="text-link" href="#contato">Conversar sobre operação <span>→</span></a>
       </div>
 
@@ -201,8 +224,8 @@
           <p>Leitura das informações disponíveis sobre utilização e rede assistencial.</p>
         </article>
         <article class="operation-card reveal delay-1">
-          <span>Demandas complexas</span>
-          <p>Organização e acompanhamento de situações que exijam interlocução entre empresa, beneficiário e operadora.</p>
+          <span>Interlocução com operadoras</span>
+          <p>Apoio em situações que demandem acompanhamento e articulação entre empresa, beneficiário e operadora.</p>
         </article>
       </div>
     </div>
@@ -212,7 +235,7 @@
         <span class="eyebrow">TECNOLOGIA APLICADA À GESTÃO</span>
         <h3>Processos, informação e relatórios organizados com apoio de plataformas especializadas.</h3>
       </div>
-      <p>Sem apresentar tecnologia de terceiros como plataforma proprietária da Orizon.</p>
+      
     </div>
   </section>
 
@@ -221,7 +244,7 @@
       <div class="intelligence-copy reveal">
         <span class="eyebrow">INTELIGÊNCIA ORIZON</span>
         <h2>Dados para entender o que está por trás do custo.</h2>
-        <p>Informações assistenciais, financeiras e populacionais podem ajudar a compreender a evolução da carteira, preparar negociações e identificar temas que merecem investigação.</p>
+        <p>Informações assistenciais, financeiras e populacionais ajudam a compreender a carteira e preparar as próximas decisões.</p>
 
         <div class="intel-terms">
           <span>Sinistralidade</span>
@@ -262,37 +285,17 @@
           <div><span>Gestão</span><b>Movimentações · pendências · renovação</b></div>
         </div>
 
-        <div class="dashboard-chart">
-          <div class="chart-title">
-            <span>EVOLUÇÃO DE INDICADORES</span>
-            <span>JAN — DEZ</span>
-          </div>
-          <svg viewBox="0 0 760 260" preserveAspectRatio="none" role="img" aria-label="Gráfico conceitual sem valores absolutos">
-            <g class="grid">
-              <line x1="0" y1="55" x2="760" y2="55"/>
-              <line x1="0" y1="115" x2="760" y2="115"/>
-              <line x1="0" y1="175" x2="760" y2="175"/>
-              <line x1="0" y1="235" x2="760" y2="235"/>
-            </g>
-            <path class="line line-gold" d="M0,195 C70,170 105,185 165,150 S275,160 330,125 S430,112 495,132 S620,102 760,82"/>
-            <path class="line line-gray" d="M0,214 C85,204 118,185 180,195 S295,172 355,181 S470,154 530,163 S650,143 760,148"/>
-          </svg>
-          <div class="months">
-            <span>JAN</span><span>FEV</span><span>MAR</span><span>ABR</span><span>MAI</span><span>JUN</span><span>JUL</span><span>AGO</span><span>SET</span><span>OUT</span><span>NOV</span><span>DEZ</span>
-          </div>
-        </div>
-
         <div class="dashboard-priorities">
-          <span>PRIORIDADES IDENTIFICADAS</span>
+          <span>FRENTES DE ANÁLISE</span>
           <div>
             <b>Utilização</b>
             <b>Perfil de risco</b>
             <b>Concentração de custos</b>
-            <b>Pontos de atenção para renovação</b>
+            <b>Renovação</b>
           </div>
         </div>
 
-        <p class="dashboard-disclaimer">Exemplo conceitual. A análise real depende das informações disponíveis em cada carteira.</p>
+        <p class="dashboard-disclaimer">Demonstração conceitual. Indicadores e análises variam conforme os dados disponíveis e o escopo contratado.</p>
       </div>
     </div>
   </section>
@@ -302,7 +305,7 @@
       <div class="health-copy reveal">
         <span class="eyebrow">SAÚDE ALÉM DO PLANO</span>
         <h2>Entender o benefício também exige entender a população.</h2>
-        <p>A gestão de saúde amplia a leitura da carteira ao organizar informações e jornadas relacionadas a diferentes grupos e situações de saúde.</p>
+        <p>A gestão de saúde conecta a leitura da carteira às diferentes necessidades da população.</p>
       </div>
 
       <div class="health-grid">
@@ -340,7 +343,7 @@
         <span class="eyebrow">NOSSA ABORDAGEM</span>
         <h2>Do entendimento do cenário à evolução contínua dos benefícios.</h2>
       </div>
-      <p>A gestão de benefícios não acontece apenas na contratação ou na renovação. Nossa abordagem foi desenhada como um ciclo que conecta planejamento, mercado, implantação, operação e análise.</p>
+      <p>Um ciclo que conecta planejamento, mercado, implantação, operação e análise.</p>
     </div>
 
     <div class="container process">
@@ -364,17 +367,17 @@
       <article class="perspective-column reveal">
         <span>PESSOAS</span>
         <h3>Acesso<br>Experiência<br>Proteção</h3>
-        <p>Para o colaborador, benefícios significam acesso, proteção e experiência.</p>
+        <p>Para as pessoas, benefícios significam acesso, proteção e experiência.</p>
       </article>
       <article class="perspective-column reveal delay-1">
         <span>RH</span>
         <h3>Operação<br>Política<br>Engajamento</h3>
-        <p>Para o RH, representam operação, atração, retenção e cuidado.</p>
+        <p>Para o RH, envolvem operação, política de benefícios e engajamento das pessoas.</p>
       </article>
       <article class="perspective-column reveal delay-2">
         <span>NEGÓCIO</span>
         <h3>Custo<br>Risco<br>Sustentabilidade</h3>
-        <p>Para a empresa, também envolvem orçamento, risco e sustentabilidade.</p>
+        <p>Para a empresa, envolvem custo, risco e sustentabilidade.</p>
       </article>
     </div>
   </section>
@@ -449,16 +452,16 @@
         <p>Conte um pouco sobre sua empresa e seus benefícios atuais. A primeira conversa é para entender o cenário, as prioridades e onde a Orizon pode fazer sentido.</p>
       </div>
 
-      <form class="contact-form reveal delay-1">
+      <form class="contact-form reveal delay-1" novalidate>
         <div class="form-grid">
-          <label>Nome<input type="text" name="nome"></label>
-          <label>Empresa<input type="text" name="empresa"></label>
-          <label>E-mail corporativo<input type="email" name="email"></label>
-          <label>Telefone<input type="tel" name="telefone"></label>
-          <label>Número aproximado de vidas<input type="number" name="vidas" min="0"></label>
+          <label>Nome<input type="text" name="nome" required autocomplete="name"></label>
+          <label>Empresa<input type="text" name="empresa" required autocomplete="organization"></label>
+          <label>E-mail corporativo<input type="email" name="email" required autocomplete="email"></label>
+          <label>Telefone<input type="tel" name="telefone" required autocomplete="tel"></label>
+          <label>Número aproximado de vidas<input type="number" name="vidas" min="1" required></label>
 
           <label>Benefícios atuais
-            <select name="beneficios">
+            <select name="beneficios" required>
               <option value="">Selecione</option>
               <option>Saúde</option>
               <option>Odonto</option>
@@ -470,7 +473,7 @@
           </label>
 
           <label>O que você procura?
-            <select name="interesse">
+            <select name="interesse" required>
               <option value="">Selecione</option>
               <option>Contratação / cotação</option>
               <option>Renovação</option>
@@ -481,8 +484,10 @@
           </label>
         </div>
 
-        <button class="btn btn-dark" type="submit">Falar com a Orizon <span>→</span></button>
-        <p class="form-note">O envio ainda precisa ser conectado ao canal comercial da Orizon.</p>
+        <label class="hp-field" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn btn-dark submit-btn" type="submit">Falar com a Orizon <span>→</span></button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        
       </form>
     </div>
   </section>
