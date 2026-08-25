@@ -1,0 +1,14 @@
+/* Orizon header logo update */
+.site-header .brand img {
+  display: block;
+  width: auto;
+  height: 46px;
+  max-width: 190px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .site-header .brand img {
+    height: 38px;
+    max-width: 158px;
+  }
+}
