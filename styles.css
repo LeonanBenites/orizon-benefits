@@ -3076,3 +3076,48 @@ main{
     bottom:auto !important;
   }
 }
+
+/* =========================================================
+   V36.2 — refinamento final do mapa de expansão
+   Mais compacto, núcleo mais presente e órbita mais editorial
+   ========================================================= */
+@media(min-width:901px){
+  .health-orbit{
+    max-width:1080px;
+    height:535px;
+  }
+
+  .health-core{
+    width:208px;
+    height:208px;
+    box-shadow:0 0 0 17px #f7f4ed;
+  }
+  .health-core::before{
+    top:29px;
+    width:51px;
+    height:25px;
+  }
+  .health-core-brand{
+    margin-top:24px;
+  }
+  .health-core strong{
+    margin-top:11px;
+    font-size:19px;
+    line-height:1.01;
+  }
+  .health-core-health{
+    margin-top:7px;
+    font-size:10px;
+  }
+
+  /* aproxima os serviços do núcleo sem criar simetria rígida */
+  .orbit-saude{left:7%;top:64px}
+  .orbit-riscos{left:14%;bottom:48px}
+  .orbit-ergonomia{right:5%;top:72px}
+  .orbit-vacinacao{right:10%;bottom:55px}
+  .orbit-pbm{
+    left:49.5% !important;
+    bottom:-42px !important;
+    width:220px !important;
+  }
+}

@@ -197,7 +197,7 @@
       });
     }
 
-    if (userInitiated) restart();
+    // Navegação exclusivamente manual: não reinicia autoplay.
   }
 
   function advance() {
@@ -225,9 +225,9 @@
   next?.addEventListener('click', () => render(current + 1, true));
 
   pager.addEventListener('mouseenter', () => { paused = true; });
-  pager.addEventListener('mouseleave', () => { paused = false; restart(); });
+  pager.addEventListener('mouseleave', () => { paused = false; });
   pager.addEventListener('focusin', () => { paused = true; });
-  pager.addEventListener('focusout', () => { paused = false; restart(); });
+  pager.addEventListener('focusout', () => { paused = false; });
 
   viewport?.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') { e.preventDefault(); render(current + 1, true); }
@@ -248,11 +248,10 @@
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) stop();
-    else restart();
   });
 
   render(0);
-  start();
+  // Sinistralidade permanece fixa até interação manual do usuário.
 })();
 
 
