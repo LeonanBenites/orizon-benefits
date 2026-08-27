@@ -547,3 +547,477 @@ p{color:var(--muted);line-height:1.7}
     max-width:165px;
   }
 }
+
+
+/* =========================================================
+   HEADER — NAVEGAÇÃO POR OFERTA
+   Benefícios · Operação · Inteligência · Gestão em Saúde
+   · Serviços Complementares
+   ========================================================= */
+html{
+  scroll-padding-top:78px;
+}
+section[id]{
+  scroll-margin-top:0;
+}
+.desktop-nav{
+  gap:25px;
+  white-space:nowrap;
+}
+.desktop-nav a{
+  position:relative;
+}
+.desktop-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-8px;
+  height:1px;
+  background:#a7833c;
+  transition:right .22s ease;
+}
+.desktop-nav a:hover::after,
+.desktop-nav a:focus-visible::after{
+  right:0;
+}
+.header-cta{
+  white-space:nowrap;
+}
+
+@media(max-width:1180px) and (min-width:821px){
+  .header-inner{
+    gap:22px;
+  }
+  .desktop-nav{
+    gap:18px;
+  }
+  .desktop-nav a{
+    font-size:11px;
+  }
+  .header-cta{
+    padding-left:14px;
+    padding-right:14px;
+    font-size:11px;
+  }
+}
+
+@media(max-width:980px) and (min-width:821px){
+  .site-header .header-brand-logo{
+    max-width:180px;
+    height:48px;
+  }
+  .desktop-nav{
+    gap:14px;
+  }
+  .desktop-nav a{
+    font-size:10px;
+  }
+}
+
+
+/* V13 — anchor alignment correction */
+html{
+  scroll-padding-top:78px;
+}
+section[id]{
+  scroll-margin-top:0 !important;
+}
+@media(max-width:820px){
+  html{
+    scroll-padding-top:78px;
+  }
+}
+
+/* V14 — Serviços Complementares */
+.additional{background:var(--paper)}
+.additional-head{max-width:none}
+.additional-intro{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.72fr);gap:clamp(56px,8vw,150px);align-items:end;margin-top:22px;padding-bottom:54px;border-bottom:1px solid var(--line)}
+.additional-intro h2{margin:0;max-width:800px}
+.additional-intro p{margin:0 0 8px;max-width:520px;font-size:15px;line-height:1.75}
+.additional-services{margin-top:52px}
+.additional-group+.additional-group{margin-top:58px}
+.additional-group-head{display:flex;align-items:baseline;gap:18px;margin-bottom:18px}
+.additional-group-head span{color:var(--gold);font-size:10px;letter-spacing:.14em}
+.additional-group-head h3{margin:0;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.additional-grid{display:grid!important;gap:0!important;margin:0!important;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.additional-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.additional-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.additional-grid .additional-card{display:block;padding:30px 30px 32px;min-height:225px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background-color .22s ease}
+.additional-grid .additional-card:hover{background:rgba(167,131,60,.045)}
+.additional-grid .additional-card-kicker{display:block;padding:0;border:0;margin:0 0 28px;color:var(--gold);font-size:9px;letter-spacing:.16em}
+.additional-card h4{margin:0 0 16px;font-size:clamp(22px,1.65vw,30px);line-height:1.08;font-weight:500;letter-spacing:-.035em}
+.additional-card p{margin:0;max-width:390px;font-size:13px;line-height:1.65}
+.additional-note{margin:30px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;letter-spacing:.025em}
+@media(max-width:900px){.additional-intro{grid-template-columns:1fr;gap:24px;padding-bottom:40px}.additional-intro h2 br{display:none}.additional-grid-three,.additional-grid-two{grid-template-columns:1fr}.additional-grid .additional-card{min-height:auto}}
+@media(max-width:560px){.additional-services{margin-top:38px}.additional-group+.additional-group{margin-top:44px}.additional-grid .additional-card{padding:25px 22px 27px}.additional-grid .additional-card-kicker{margin-bottom:20px}.additional-intro p{font-size:14px}}
+
+
+/* =========================================================
+   V15 — INTELIGÊNCIA ORIZON
+   Dashboard integrado ao background escuro da seção
+   ========================================================= */
+.intelligence{
+  background:#151515;
+  color:#fff;
+}
+.intelligence-intro{
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(460px,1.22fr);
+  gap:80px;
+  align-items:end;
+}
+.intelligence-intro-copy h2{
+  color:#fff;
+  margin:18px 0 22px;
+  max-width:620px;
+}
+.intelligence-intro-copy p{
+  max-width:560px;
+  color:#aaa69f;
+  font-size:15px;
+}
+.intelligence-intro-points{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #353535;
+  border-bottom:1px solid #353535;
+}
+.intelligence-intro-points article{
+  padding:24px 22px 24px 0;
+  min-height:135px;
+  border-right:1px solid #353535;
+}
+.intelligence-intro-points article:not(:first-child){padding-left:22px}
+.intelligence-intro-points article:last-child{border-right:0}
+.intelligence-intro-points article>span{
+  display:block;
+  color:#b18a41;
+  font-size:9px;
+  letter-spacing:.14em;
+  margin-bottom:18px;
+}
+.intelligence-intro-points strong{
+  display:block;
+  color:#fff;
+  font-size:15px;
+  margin-bottom:7px;
+}
+.intelligence-intro-points p{
+  margin:0;
+  color:#77736d;
+  font-size:11px;
+  line-height:1.55;
+}
+
+.intelligence-dashboard{
+  margin-top:58px;
+  padding:28px;
+  border:1px solid #373737;
+  background:#1d1d1d;
+  box-shadow:0 30px 70px rgba(0,0,0,.22);
+}
+.intel-dashboard-head{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+  padding-bottom:20px;
+  border-bottom:1px solid #363636;
+}
+.intel-dashboard-head span{
+  display:block;
+  color:#77736c;
+  font-size:8px;
+  letter-spacing:.14em;
+}
+.intel-dashboard-head strong{
+  display:block;
+  margin-top:5px;
+  color:#fff;
+  font-size:17px;
+}
+.intel-dashboard-head small{
+  color:#b18a41;
+  font-size:8px;
+  letter-spacing:.12em;
+}
+.intel-dashboard-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:16px;
+}
+.intel-panel{
+  background:#222;
+  border:1px solid #393939;
+  padding:20px;
+  min-height:245px;
+}
+.intel-panel-title{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:16px;
+}
+.intel-panel-title span{
+  color:#b18a41;
+  font-size:8px;
+  letter-spacing:.14em;
+}
+.intel-panel-title h3{
+  margin:6px 0 0;
+  color:#fff;
+  font-size:17px;
+  letter-spacing:-.02em;
+}
+.intel-table{
+  border-top:1px solid #3a3a3a;
+}
+.intel-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  align-items:center;
+  min-height:39px;
+  padding:8px 0;
+  border-bottom:1px solid #333;
+}
+.intel-table-three .intel-row{
+  grid-template-columns:minmax(0,1.45fr) minmax(70px,.55fr) minmax(70px,.55fr);
+}
+.intel-row span,
+.intel-row strong{
+  font-size:10px;
+  font-weight:500;
+}
+.intel-row span{color:#aaa69f}
+.intel-row strong{color:#fff;text-align:right}
+.intel-row-head span{
+  color:#69665f;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.intel-row-emphasis{
+  background:#26231d;
+  margin:0 -10px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.intel-negative{color:#d3a24c!important}
+.intel-composition-bar{
+  margin-top:18px;
+}
+.intel-bar-labels{
+  display:flex;
+  justify-content:space-between;
+  color:#77736c;
+  font-size:8px;
+  margin-bottom:8px;
+}
+.intel-bar{
+  height:7px;
+  background:#2b2b2b;
+  overflow:hidden;
+  display:flex;
+}
+.intel-bar i{display:block;background:#b18a41}
+.intel-bar b{display:block;background:#66625c}
+
+.intel-financial-block{
+  display:grid;
+  grid-template-columns:minmax(420px,.85fr) minmax(0,1.15fr);
+  gap:14px;
+  margin-top:14px;
+}
+.intel-financial-table,
+.intel-chart-card{
+  background:#222;
+  border:1px solid #393939;
+  padding:20px;
+}
+.intel-block-title{
+  margin-bottom:16px;
+}
+.intel-block-title span{
+  display:block;
+  color:#b18a41;
+  font-size:8px;
+  letter-spacing:.14em;
+}
+.intel-block-title h3{
+  margin:6px 0 0;
+  color:#fff;
+  font-size:17px;
+}
+.intel-financial-row{
+  display:grid;
+  grid-template-columns:.75fr 1fr 1fr 1fr 1fr;
+  gap:12px;
+  align-items:center;
+  min-height:36px;
+  border-bottom:1px solid #333;
+}
+.intel-financial-row span,
+.intel-financial-row strong{
+  font-size:9px;
+  color:#aaa69f;
+  font-weight:500;
+}
+.intel-financial-row strong{text-align:right;color:#fff}
+.intel-financial-head span{
+  color:#69665f;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.intel-financial-total{
+  border-top:1px solid #4a4a4a;
+  border-bottom:0;
+  margin-top:4px;
+}
+.intel-financial-total span{color:#fff;font-weight:600}
+
+.intel-chart-wrap{
+  min-height:300px;
+}
+.intel-chart{
+  width:100%;
+  height:235px;
+  display:block;
+}
+.intel-chart-grid line{
+  stroke:#303030;
+  stroke-width:1;
+}
+.intel-chart-line{
+  fill:none;
+  stroke:#c9a052;
+  stroke-width:3;
+  vector-effect:non-scaling-stroke;
+}
+.intel-chart-points circle{
+  fill:#1d1d1d;
+  stroke:#e2bb6b;
+  stroke-width:2;
+  vector-effect:non-scaling-stroke;
+}
+.intel-chart-limit{
+  stroke:#61615d;
+  stroke-width:1;
+  stroke-dasharray:4 5;
+}
+.intel-chart-avg{
+  stroke:#8c6731;
+  stroke-width:1.2;
+}
+.intel-chart-months{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  color:#5e5a54;
+  font-size:7px;
+  text-align:center;
+  margin-top:-6px;
+}
+.intel-chart-legend{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:18px;
+  color:#77736c;
+  font-size:8px;
+}
+.intel-chart-legend span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.intel-chart-legend i{
+  display:inline-block;
+  width:22px;
+  height:1px;
+}
+.legend-line{background:#c9a052}
+.legend-limit{background:#61615d}
+.legend-average{background:#8c6731}
+
+.intel-insight-strip{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:60px;
+  align-items:center;
+  margin-top:14px;
+  padding:22px 20px;
+  border:1px solid #393939;
+  background:#202020;
+}
+.intel-insight-strip span{
+  display:block;
+  color:#b18a41;
+  font-size:8px;
+  letter-spacing:.14em;
+  margin-bottom:5px;
+}
+.intel-insight-strip strong{
+  color:#fff;
+  font-size:14px;
+}
+.intel-insight-strip p{
+  margin:0;
+  color:#8c8881;
+  font-size:11px;
+  line-height:1.65;
+}
+.intel-disclaimer{
+  margin:14px 0 0;
+  color:#5d5953;
+  font-size:8px;
+}
+
+@media(max-width:1000px){
+  .intelligence-intro{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  .intel-financial-block{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:760px){
+  .intelligence-dashboard{
+    width:calc(100% - 28px);
+    padding:16px;
+  }
+  .intel-dashboard-grid{
+    grid-template-columns:1fr;
+  }
+  .intelligence-intro-points{
+    grid-template-columns:1fr;
+  }
+  .intelligence-intro-points article,
+  .intelligence-intro-points article:not(:first-child){
+    padding:18px 0;
+    min-height:0;
+    border-right:0;
+    border-bottom:1px solid #353535;
+  }
+  .intelligence-intro-points article:last-child{border-bottom:0}
+  .intel-financial-scroll{overflow-x:auto}
+  .intel-financial-row{min-width:600px}
+  .intel-insight-strip{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+}
+@media(max-width:560px){
+  .intel-panel{padding:16px}
+  .intel-row{gap:10px}
+  .intel-table-three .intel-row{
+    grid-template-columns:minmax(0,1.2fr) minmax(58px,.6fr) minmax(58px,.6fr);
+  }
+  .intel-row span,.intel-row strong{font-size:9px}
+  .intel-chart{height:190px}
+  .intel-chart-legend{justify-content:flex-start}
+}
