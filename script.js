@@ -133,3 +133,139 @@
 
   requestAnimationFrame(render);
 })();
+
+
+/* =========================================================
+   V16 — Intelligence pager
+   ========================================================= */
+(() => {
+  const pager = document.querySelector('[data-intelligence-pager]');
+  if (!pager) return;
+
+  const track = pager.querySelector('.intel-track');
+  const tabs = [...pager.querySelectorAll('.intel-tab')];
+  const pages = [...pager.querySelectorAll('.intel-page')];
+  const prev = pager.querySelector('.intel-prev');
+  const next = pager.querySelector('.intel-next');
+  const counter = pager.querySelector('.intel-counter b');
+  const progress = pager.querySelector('.intel-progress i');
+  const viewport = pager.querySelector('.intel-viewport');
+
+  let current = 0;
+  let timer = null;
+  let paused = false;
+  let pointerStartX = null;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function render(index, userInitiated = false) {
+    current = (index + pages.length) % pages.length;
+    track.style.transform = `translateX(-${current * 20}%)`;
+
+    tabs.forEach((tab, i) => {
+      const active = i === current;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+    });
+
+    pages.forEach((page, i) => page.classList.toggle('is-active', i === current));
+
+    const referenceSteps = [...pager.querySelectorAll('.intel-reference-steps span')];
+    referenceSteps.forEach((step, i) => step.classList.toggle('is-active', i === current));
+
+    const currentNumber = String(current + 1).padStart(2, '0');
+    if (counter) counter.textContent = currentNumber;
+    pager.querySelectorAll('.intel-counter b').forEach(el => {
+      el.textContent = currentNumber;
+    });
+    if (progress) progress.style.width = `${((current + 1) / pages.length) * 100}%`;
+
+    const activeTab = tabs[current];
+
+    // Nunca usar scrollIntoView() aqui: em autoplay isso pode deslocar
+    // verticalmente a página inteira até a seção de Inteligência.
+    // Quando a troca for iniciada pelo usuário, ajustamos apenas o scroll
+    // horizontal do container de abas.
+    if (userInitiated && activeTab) {
+      const tabsRect = activeTab.parentElement.getBoundingClientRect();
+      const tabRect = activeTab.getBoundingClientRect();
+      const delta = (tabRect.left + tabRect.width / 2) - (tabsRect.left + tabsRect.width / 2);
+
+      activeTab.parentElement.scrollBy({
+        left: delta,
+        behavior: 'smooth'
+      });
+    }
+
+    if (userInitiated) restart();
+  }
+
+  function advance() {
+    if (!paused) render(current + 1);
+  }
+
+  function start() {
+    if (reducedMotion) return;
+    stop();
+    timer = setInterval(advance, 8000);
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  function restart() {
+    stop();
+    start();
+  }
+
+  tabs.forEach((tab, i) => tab.addEventListener('click', () => render(i, true)));
+  prev?.addEventListener('click', () => render(current - 1, true));
+  next?.addEventListener('click', () => render(current + 1, true));
+
+  pager.addEventListener('mouseenter', () => { paused = true; });
+  pager.addEventListener('mouseleave', () => { paused = false; restart(); });
+  pager.addEventListener('focusin', () => { paused = true; });
+  pager.addEventListener('focusout', () => { paused = false; restart(); });
+
+  viewport?.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); render(current + 1, true); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); render(current - 1, true); }
+  });
+
+  viewport?.addEventListener('pointerdown', (e) => {
+    pointerStartX = e.clientX;
+  });
+
+  viewport?.addEventListener('pointerup', (e) => {
+    if (pointerStartX == null) return;
+    const delta = e.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(delta) < 40) return;
+    render(current + (delta < 0 ? 1 : -1), true);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else restart();
+  });
+
+  render(0);
+  start();
+})();
+
+
+/* V18 — safeguard: pager autoplay must not move document scroll */
+(() => {
+  const pager = document.querySelector('[data-intelligence-pager]');
+  if (!pager) return;
+
+  // Prevent accidental browser scroll restoration from focus changes
+  // inside automated pager transitions.
+  pager.querySelectorAll('.intel-tab, .intel-arrow').forEach(el => {
+    el.addEventListener('mousedown', (e) => {
+      // user interaction remains normal; no programmatic focus is triggered
+    }, {passive:true});
+  });
+})();
