@@ -291,9 +291,14 @@
   const getVisualAnchor = (target) => {
     if (!target) return null;
 
-    // Procura o primeiro bloco real de conteúdo dentro da seção.
-    // Isso faz a dobra começar no título/eyebrow, e não no topo
-    // vazio da própria section.
+    // "Serviços Complementares" tem padding próprio dentro do container,
+    // então o container não representa o início visual do conteúdo.
+    // Alinhamos diretamente pelo cabeçalho real da seção.
+    if (target.id === 'complementares') {
+      return target.querySelector('.health-orbit-header, .eyebrow, h2') || target;
+    }
+
+    // Demais seções: usa o primeiro bloco real de conteúdo.
     const preferred = target.querySelector(
       ':scope > .container, :scope > [class*="container"], .container, header, .section-head, .section-header'
     );
