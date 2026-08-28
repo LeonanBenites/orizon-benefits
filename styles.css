@@ -3121,3 +3121,45 @@ main{
     width:220px !important;
   }
 }
+
+
+/* =========================================================
+   Ajuste final — Soluções Complementares
+   Núcleo mais limpo + PBM alinhado à órbita
+   ========================================================= */
+
+/* remove o símbolo superior do núcleo */
+.health-core::before{
+  display:none !important;
+  content:none !important;
+}
+
+/* centraliza a mensagem principal sem o nome ORIZON */
+.health-core strong{
+  margin-top:0 !important;
+  font-size:19px !important;
+  line-height:1.02 !important;
+}
+.health-core-health{
+  margin-top:7px !important;
+}
+
+/* PBM: ligeiramente à esquerda e mais próximo do diagrama */
+@media(min-width:901px){
+  .orbit-pbm{
+    left:48% !important;
+    bottom:-8px !important;
+    width:220px !important;
+  }
+}
+
+/* mobile: mantém a estrutura vertical limpa */
+@media(max-width:900px){
+  .health-core strong{
+    margin-top:0 !important;
+    font-size:13px !important;
+  }
+  .health-core-health{
+    margin-top:5px !important;
+  }
+}
