@@ -3163,3 +3163,12 @@ main{
     margin-top:5px !important;
   }
 }
+
+
+/* Header anchor alignment fix */
+html{
+  scroll-padding-top:0 !important;
+}
+section[id]{
+  scroll-margin-top:0 !important;
+}

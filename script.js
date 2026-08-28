@@ -268,3 +268,75 @@
     }, {passive:true});
   });
 })();
+
+
+
+/* =========================================================
+   Header anchors — alinhamento real do conteúdo
+   Evita o grande espaço vazio causado pelo padding superior
+   das sections quando a navegação usa #âncoras.
+   ========================================================= */
+(() => {
+  const header = document.querySelector('header');
+  const headerLinks = document.querySelectorAll('header a[href^="#"]');
+
+  if (!headerLinks.length) return;
+
+  const getHeaderOffset = () => {
+    if (!header) return 24;
+    const rect = header.getBoundingClientRect();
+    return Math.max(rect.height, 0) + 20;
+  };
+
+  const getVisualAnchor = (target) => {
+    if (!target) return null;
+
+    // Procura o primeiro bloco real de conteúdo dentro da seção.
+    // Isso faz a dobra começar no título/eyebrow, e não no topo
+    // vazio da própria section.
+    const preferred = target.querySelector(
+      ':scope > .container, :scope > [class*="container"], .container, header, .section-head, .section-header'
+    );
+
+    return preferred || target;
+  };
+
+  const scrollToSection = (id, updateHash = true) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const anchor = getVisualAnchor(target);
+    const top = window.scrollY + anchor.getBoundingClientRect().top - getHeaderOffset();
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: 'smooth'
+    });
+
+    if (updateHash) {
+      history.pushState(null, '', `#${id}`);
+    }
+  };
+
+  headerLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const id = decodeURIComponent(href.slice(1));
+      if (!document.getElementById(id)) return;
+
+      event.preventDefault();
+      scrollToSection(id, true);
+    });
+  });
+
+  // Se a página for aberta já com uma âncora, aplica o mesmo alinhamento.
+  window.addEventListener('load', () => {
+    if (!location.hash) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!document.getElementById(id)) return;
+
+    setTimeout(() => scrollToSection(id, false), 50);
+  });
+})();
