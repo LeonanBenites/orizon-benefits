@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
   const empresa = clean(body.empresa || body.company, 160);
   const telefone = clean(body.telefone || body.phone, 80);
   const colaboradores = clean(body.colaboradores || body.funcionarios || body.vidas, 100);
-  const beneficios = clean(body.beneficios, 200);
+  const beneficios = Array.isArray(body.beneficios) ? body.beneficios.map(v => clean(v, 100)).filter(Boolean).join(', ') : clean(body.beneficios, 400);
   const interesse = clean(body.interesse || body.assunto || body.subject, 200);
   const mensagem = clean(body.mensagem || body.message, 2000);
   const origem = clean(body.origem || 'website', 80);
@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     ['E-mail', email],
     ['Empresa', empresa],
     ['Telefone', telefone],
-    ['Número aproximado de vidas', colaboradores],
+    ['Número aproximado de colaboradores', colaboradores],
     ['Benefícios atuais', beneficios],
     ['Interesse', interesse],
     ['Mensagem', mensagem],

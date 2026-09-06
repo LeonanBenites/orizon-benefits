@@ -3322,3 +3322,27 @@ section[id]{
 .message-field textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.55);box-shadow:0 0 0 2px rgba(167,131,60,.08)}
 .message-field span{font-weight:400;color:#8a857d;margin-left:4px}
 @media(max-width:560px){.benefits-fieldset{grid-column:1}.benefits-menu{position:static;margin-top:6px;box-shadow:none}.contact-copy h2{font-size:40px}.contact-form{padding-top:20px}}
+
+/* Abordagem — ciclo compacto e interativo */
+.approach-head h2{max-width:760px}
+.process-cycle{margin-top:44px;padding-bottom:46px}
+.process-cycle article{min-height:148px;cursor:default;transition:transform .25s ease}
+.process-cycle article>span{width:56px;height:56px;margin-bottom:20px;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}
+.process-cycle h3{font-size:17px;margin-bottom:7px;transition:color .25s ease}
+.process-cycle p{font-size:12.5px;line-height:1.55;max-width:175px;opacity:.28;transform:translateY(5px);transition:opacity .25s ease,transform .25s ease}
+.process-cycle article:hover,.process-cycle article:focus-within{transform:translateY(-2px)}
+.process-cycle article:hover>span,.process-cycle article:focus-within>span{background:var(--gold2);color:var(--paper);transform:scale(1.04)}
+.process-cycle article:hover p,.process-cycle article:focus-within p{opacity:1;transform:none}
+.process-cycle article:hover h3,.process-cycle article:focus-within h3{color:#8f7135}
+.process-cycle .process-line{top:28px}
+.process-loop{position:absolute;right:0;bottom:0;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#8f7135;display:flex;align-items:center;gap:8px}
+.process-loop span{font-size:20px;line-height:1}
+@media (max-width:900px){
+  .process-cycle{padding-bottom:0}
+  .process-cycle p{opacity:1;transform:none;max-width:240px}
+  .process-loop{position:static;grid-column:1/-1;margin-top:-10px}
+}
+@media (max-width:640px){
+  .process-cycle article{min-height:0;padding-bottom:20px}
+  .process-cycle article>span{width:48px;height:48px;margin-bottom:14px}
+}
