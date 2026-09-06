@@ -455,3 +455,49 @@
   });
   render();
 })();
+
+/* =========================================================
+   BENEFÍCIOS — accordion compacto no touch/mobile
+   ========================================================= */
+(() => {
+  const grid = document.querySelector('.benefits-interactive');
+  if (!grid) return;
+  const items = [...grid.querySelectorAll('.benefit-item')];
+  items.forEach(item => {
+    const btn = item.querySelector('.benefit-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('is-open');
+      items.forEach(other => {
+        other.classList.remove('is-open');
+        other.querySelector('.benefit-toggle')?.setAttribute('aria-expanded','false');
+      });
+      if (willOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+
+/* Benefits — accordion compacto no touch/mobile */
+(() => {
+  const grid = document.querySelector('.benefits-interactive');
+  if (!grid) return;
+  const items = [...grid.querySelectorAll('.benefit-item')];
+  items.forEach(item => {
+    const btn = item.querySelector('.benefit-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('is-open');
+      items.forEach(other => {
+        other.classList.remove('is-open');
+        other.querySelector('.benefit-toggle')?.setAttribute('aria-expanded','false');
+      });
+      if (willOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
