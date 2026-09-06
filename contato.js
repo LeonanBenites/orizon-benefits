@@ -10,12 +10,15 @@ export default async function handler(req, res) {
     telefone,
     vidas,
     beneficios,
-    interesse
+    interesse,
+    mensagem
   } = req.body || {};
 
   if (!nome || !empresa || !email) {
     return res.status(400).json({ error: "Campos obrigatórios ausentes." });
   }
+
+  const beneficiosTexto = Array.isArray(beneficios) ? beneficios.join(", ") : (beneficios || "-");
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -35,9 +38,10 @@ export default async function handler(req, res) {
           <p><strong>Empresa:</strong> ${empresa}</p>
           <p><strong>E-mail:</strong> ${email}</p>
           <p><strong>Telefone:</strong> ${telefone || "-"}</p>
-          <p><strong>Número aproximado de vidas:</strong> ${vidas || "-"}</p>
-          <p><strong>Benefícios atuais:</strong> ${beneficios || "-"}</p>
+          <p><strong>Número aproximado de colaboradores:</strong> ${vidas || "-"}</p>
+          <p><strong>Benefícios atuais:</strong> ${beneficiosTexto}</p>
           <p><strong>Interesse:</strong> ${interesse || "-"}</p>
+          <p><strong>Contexto informado:</strong> ${mensagem || "-"}</p>
         `
       })
     });
