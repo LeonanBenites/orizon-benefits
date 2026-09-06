@@ -3379,15 +3379,15 @@ section[id]{
   outline:none;
 }
 .architecture-flow.visible .architecture-step{animation:architectureStepIn .56s cubic-bezier(.2,.75,.2,1) forwards}
-.architecture-flow.visible .architecture-step:nth-of-type(1){animation-delay:.18s}
-.architecture-flow.visible .architecture-step:nth-of-type(2){animation-delay:.34s}
-.architecture-flow.visible .architecture-step:nth-of-type(3){animation-delay:.50s}
-.architecture-flow.visible .architecture-step:nth-of-type(4){animation-delay:.66s}
+.architecture-flow.visible .architecture-step:nth-of-type(1){animation-delay:.20s}
+.architecture-flow.visible .architecture-step:nth-of-type(2){animation-delay:.40s}
+.architecture-flow.visible .architecture-step:nth-of-type(3){animation-delay:.60s}
+.architecture-flow.visible .architecture-step:nth-of-type(4){animation-delay:.80s}
 .architecture-arrow{opacity:0;transform:translateX(-8px);transition:transform .25s ease,opacity .25s ease}
 .architecture-flow.visible .architecture-arrow{animation:architectureArrowIn .38s ease forwards}
 .architecture-flow.visible .architecture-arrow:nth-of-type(1){animation-delay:.30s}
-.architecture-flow.visible .architecture-arrow:nth-of-type(2){animation-delay:.46s}
-.architecture-flow.visible .architecture-arrow:nth-of-type(3){animation-delay:.62s}
+.architecture-flow.visible .architecture-arrow:nth-of-type(2){animation-delay:.50s}
+.architecture-flow.visible .architecture-arrow:nth-of-type(3){animation-delay:.70s}
 .architecture-step h3,.architecture-step p,.architecture-step>span{transition:color .24s ease,transform .24s ease}
 .architecture-hover-line{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left center;transition:transform .32s cubic-bezier(.2,.75,.2,1)}
 .architecture-step:hover h3,.architecture-step:focus-visible h3{color:var(--gold);transform:translateX(4px)}
@@ -3498,15 +3498,15 @@ section[id]{
 .architecture-flow.visible::before{animation:architectureLine 1.05s cubic-bezier(.2,.75,.2,1) .05s forwards}
 .architecture-step{position:relative;display:block;color:inherit;text-decoration:none;opacity:0;transform:translateY(14px);transition:background-color .28s ease,color .28s ease,transform .28s ease;outline:none}
 .architecture-flow.visible .architecture-step{animation:architectureStepIn .56s cubic-bezier(.2,.75,.2,1) forwards}
-.architecture-flow.visible .architecture-step:nth-of-type(1){animation-delay:.18s}
-.architecture-flow.visible .architecture-step:nth-of-type(2){animation-delay:.34s}
-.architecture-flow.visible .architecture-step:nth-of-type(3){animation-delay:.50s}
-.architecture-flow.visible .architecture-step:nth-of-type(4){animation-delay:.66s}
+.architecture-flow.visible .architecture-step:nth-of-type(1){animation-delay:.20s}
+.architecture-flow.visible .architecture-step:nth-of-type(2){animation-delay:.40s}
+.architecture-flow.visible .architecture-step:nth-of-type(3){animation-delay:.60s}
+.architecture-flow.visible .architecture-step:nth-of-type(4){animation-delay:.80s}
 .architecture-arrow{opacity:0;transform:translateX(-8px);transition:transform .25s ease,opacity .25s ease}
 .architecture-flow.visible .architecture-arrow{animation:architectureArrowIn .38s ease forwards}
 .architecture-flow.visible .architecture-arrow:nth-of-type(1){animation-delay:.30s}
-.architecture-flow.visible .architecture-arrow:nth-of-type(2){animation-delay:.46s}
-.architecture-flow.visible .architecture-arrow:nth-of-type(3){animation-delay:.62s}
+.architecture-flow.visible .architecture-arrow:nth-of-type(2){animation-delay:.50s}
+.architecture-flow.visible .architecture-arrow:nth-of-type(3){animation-delay:.70s}
 .architecture-step h3,.architecture-step p,.architecture-step>span{transition:color .24s ease,transform .24s ease}
 .architecture-hover-line{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left center;transition:transform .32s cubic-bezier(.2,.75,.2,1)}
 .architecture-step:hover h3,.architecture-step:focus-visible h3{color:var(--gold);transform:translateX(4px)}
@@ -3568,4 +3568,21 @@ section[id]{
   .architecture-flow::before{transform:scaleX(1);animation:none!important}
   .architecture-step,.architecture-arrow{opacity:1;transform:none;animation:none!important;transition:none!important}
   .benefits-interactive .benefit-item{transition:none}
+}
+
+
+/* Complementares — sticky robusto do bloco editorial esquerdo */
+@media (min-width:1001px){
+  .complementary-layout{align-items:stretch;}
+  .complementary-header{
+    position:-webkit-sticky !important;
+    position:sticky !important;
+    top:96px;
+    align-self:start;
+    height:max-content;
+    z-index:2;
+  }
+}
+@media (max-width:1000px){
+  .complementary-header{position:static !important;}
 }
