@@ -163,27 +163,11 @@
       <p>Saúde, odonto, vida e benefícios flexíveis formam a base da estratégia. Outras soluções podem complementar o desenho conforme as necessidades de cada empresa.</p>
     </div>
 
-    <div class="container benefits-grid">
-      <article class="benefit-item reveal">
-        <span>Saúde</span>
-        <h3>Planos de Saúde</h3>
-        <p>Estudo de mercado, desenho, negociação, implantação e acompanhamento da carteira de saúde.</p>
-      </article>
-      <article class="benefit-item reveal delay-1">
-        <span>Odonto</span>
-        <h3>Odontológico</h3>
-        <p>Análise, contratação e acompanhamento de soluções odontológicas considerando cobertura, rede, custeio e perfil da empresa.</p>
-      </article>
-      <article class="benefit-item reveal delay-2">
-        <span>Vida</span>
-        <h3>Seguro de Vida</h3>
-        <p>Estruturação de coberturas individuais e coletivas considerando proteção financeira, política interna e requisitos aplicáveis.</p>
-      </article>
-      <article class="benefit-item reveal delay-3">
-        <span>Flexíveis</span>
-        <h3>Benefícios Flexíveis</h3>
-        <p>Alimentação, refeição, mobilidade, auxílios e plataformas alinhadas à política de benefícios da empresa.</p>
-      </article>
+    <div class="container benefits-grid benefits-interactive" aria-label="Principais benefícios">
+      <article class="benefit-item reveal" tabindex="0"><span>Saúde</span><h3>Planos de Saúde</h3><p>Estudo de mercado, desenho, negociação, implantação e acompanhamento da carteira de saúde.</p><div class="benefit-more" aria-hidden="true"><small>ATUAÇÃO ORIZON</small><strong>Desenho · Mercado · Negociação · Implantação · Gestão</strong><a href="#contato">Conhecer a solução <b>→</b></a></div></article>
+      <article class="benefit-item reveal delay-1" tabindex="0"><span>Odonto</span><h3>Odontológico</h3><p>Análise, contratação e acompanhamento de soluções odontológicas considerando cobertura, rede, custeio e perfil da empresa.</p><div class="benefit-more" aria-hidden="true"><small>ATUAÇÃO ORIZON</small><strong>Rede · Cobertura · Custeio · Contratação · Gestão</strong><a href="#contato">Conhecer a solução <b>→</b></a></div></article>
+      <article class="benefit-item reveal delay-2" tabindex="0"><span>Vida</span><h3>Seguro de Vida</h3><p>Estruturação de coberturas individuais e coletivas considerando proteção financeira, política interna e requisitos aplicáveis.</p><div class="benefit-more" aria-hidden="true"><small>ATUAÇÃO ORIZON</small><strong>Diagnóstico · Coberturas · Capitais · Negociação · Implantação</strong><a href="#contato">Conhecer a solução <b>→</b></a></div></article>
+      <article class="benefit-item reveal delay-3" tabindex="0"><span>Flexíveis</span><h3>Benefícios Flexíveis</h3><p>Alimentação, refeição, mobilidade, auxílios e plataformas alinhadas à política de benefícios da empresa.</p><div class="benefit-more" aria-hidden="true"><small>ATUAÇÃO ORIZON</small><strong>Política · Plataforma · Elegibilidade · Implantação · Acompanhamento</strong><a href="#contato">Conhecer a solução <b>→</b></a></div></article>
     </div>
 
     <div class="container complementary-strip reveal">
@@ -205,31 +189,22 @@
         <a class="text-link" href="#contato">Conversar sobre operação <span>→</span></a>
       </div>
 
-      <div class="operations-grid">
-        <article class="operation-card reveal">
-          <span>Cadastro & movimentações</span>
-          <p>Inclusões, exclusões, alterações e acompanhamento da base de beneficiários.</p>
-        </article>
-        <article class="operation-card reveal delay-1">
-          <span>Atendimento</span>
-          <p>Apoio à jornada do colaborador em demandas relacionadas ao benefício.</p>
-        </article>
-        <article class="operation-card reveal delay-2">
-          <span>Conciliação cadastral</span>
-          <p>Confronto entre bases disponibilizadas pela empresa e registros das operadoras para identificação de divergências.</p>
-        </article>
-        <article class="operation-card reveal delay-3">
-          <span>Conferência de faturamento</span>
-          <p>Mais do que validar valores, a análise pode considerar informações cadastrais, financeiras e contratuais relacionadas à cobrança.</p>
-        </article>
-        <article class="operation-card reveal">
-          <span>Rede</span>
-          <p>Leitura das informações disponíveis sobre utilização e rede assistencial.</p>
-        </article>
-        <article class="operation-card reveal delay-1">
-          <span>Interlocução com operadoras</span>
-          <p>Apoio em situações que demandem acompanhamento e articulação entre empresa, beneficiário e operadora.</p>
-        </article>
+      <div class="operations-journey reveal" data-operations-journey>
+        <div class="operations-track" role="tablist" aria-label="Jornada operacional dos benefícios">
+          <button class="operation-step is-active" type="button" role="tab" aria-selected="true" data-operation="cadastro"><span class="operation-step-number">01</span><strong>Cadastro</strong></button>
+          <button class="operation-step" type="button" role="tab" aria-selected="false" data-operation="atendimento"><span class="operation-step-number">02</span><strong>Atendimento</strong></button>
+          <button class="operation-step" type="button" role="tab" aria-selected="false" data-operation="conciliacao"><span class="operation-step-number">03</span><strong>Conciliação</strong></button>
+          <button class="operation-step" type="button" role="tab" aria-selected="false" data-operation="faturamento"><span class="operation-step-number">04</span><strong>Faturamento</strong></button>
+          <button class="operation-step" type="button" role="tab" aria-selected="false" data-operation="rede"><span class="operation-step-number">05</span><strong>Rede</strong></button>
+          <button class="operation-step" type="button" role="tab" aria-selected="false" data-operation="operadoras"><span class="operation-step-number">06</span><strong>Operadoras</strong></button>
+        </div>
+        <div class="operation-detail" role="tabpanel" aria-live="polite">
+          <span class="eyebrow operation-detail-kicker">01 · CADASTRO & MOVIMENTAÇÕES</span>
+          <h3>Uma base correta é o primeiro passo para uma operação que funciona.</h3>
+          <p>Inclusões, exclusões, alterações e acompanhamento da base de beneficiários, com organização dos movimentos e atenção aos prazos de cada operadora.</p>
+          <div class="operation-detail-tags"><span>Inclusões</span><span>Exclusões</span><span>Alterações</span><span>Elegibilidade</span></div>
+        </div>
+        <div class="operations-foundation"><span>PROCESSOS</span><i>•</i><span>DADOS</span><i>•</i><span>RELATÓRIOS</span><i>•</i><span>TECNOLOGIA</span></div>
       </div>
     </div>
 
@@ -585,58 +560,30 @@
 
   
 
-  <section class="additional section-pad bg-complement-v30" id="complementares">
-  <div class="container health-orbit-section">
-    <header class="health-orbit-header">
-      <p class="eyebrow">SOLUÇÕES COMPLEMENTARES</p>
-      <h2>Quando a estratégia pede mais,<br>o desenho se expande.</h2>
+  <section class="complementary section-pad" id="complementares">
+  <div class="container complementary-layout" data-complementary>
+    <header class="complementary-header reveal">
+      <span class="eyebrow">SOLUÇÕES COMPLEMENTARES</span>
+      <h2>Uma estratégia de benefícios não termina no plano de saúde.</h2>
+      <p>Conectamos frentes complementares à gestão de pessoas e saúde para ampliar prevenção, acesso e capacidade de decisão.</p>
     </header>
 
-    <div class="health-orbit" aria-label="Gestão Integrada em Saúde e soluções complementares">
-      <svg class="health-orbit-lines" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <marker id="orbit-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-            <path d="M0,0 L8,4 L0,8" class="orbit-arrow-head" />
-          </marker>
-        </defs>
-        <path class="orbit-branch" d="M600 280 C500 208, 425 174, 330 164" />
-        <path class="orbit-branch" d="M600 280 C510 324, 430 372, 360 402" />
-        <path class="orbit-branch" d="M600 280 C700 210, 780 176, 875 168" />
-        <path class="orbit-branch" d="M600 280 C695 326, 770 370, 838 402" />
-        <path class="orbit-branch" d="M600 280 C620 344, 614 402, 580 458" />
-        <path class="orbit-ghost" d="M700 72 C805 74, 900 108, 966 166" />
-        <path class="orbit-ghost" d="M250 374 C322 446, 414 486, 505 494" />
-      </svg>
+    <div class="complementary-explorer reveal delay-1">
+      <nav class="complementary-nav" aria-label="Soluções complementares" role="tablist">
+        <button class="complementary-tab is-active" type="button" role="tab" aria-selected="true" data-complementary-key="ocupacional"><span class="complementary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6M10 3h4v3h-4z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></span><span>Saúde Ocupacional</span><span class="complementary-arrow">→</span></button>
+        <button class="complementary-tab" type="button" role="tab" aria-selected="false" data-complementary-key="psicossociais"><span class="complementary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17.5v.1"/></svg></span><span>Riscos Psicossociais</span><span class="complementary-arrow">→</span></button>
+        <button class="complementary-tab" type="button" role="tab" aria-selected="false" data-complementary-key="ergonomia"><span class="complementary-icon" aria-hidden="true"><circle cx="9" cy="5" r="2"/><path d="M9 8v5l4 2 2 5M9 11l-3 4M13 10h5v7h-5M5 20h9"/></svg></span><span>Ergonomia</span><span class="complementary-arrow">→</span></button>
+        <button class="complementary-tab" type="button" role="tab" aria-selected="false" data-complementary-key="vacinacao"><span class="complementary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 4 6 6M16 2l6 6M5 13l6 6M7 11l6 6M4 20l4-4M11 13l6-6 3 3-6 6"/></svg></span><span>Campanhas de Vacinação</span><span class="complementary-arrow">→</span></button>
+        <button class="complementary-tab" type="button" role="tab" aria-selected="false" data-complementary-key="pbm"><span class="complementary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.2 4.2a4.2 4.2 0 0 1 5.9 0l5.7 5.7a4.2 4.2 0 0 1-5.9 5.9L8.2 10a4.2 4.2 0 0 1 0-5.8Z"/><path d="m10.8 12.6 5.8-5.8M5 18h7M8.5 14.5V21"/></svg></span><span>PBM</span><span class="complementary-arrow">→</span></button>
+      </nav>
 
-      <div class="health-core">
-        <strong>GESTÃO<br>INTEGRADA</strong>
-        <span class="health-core-health">EM SAÚDE</span>
+      <div class="complementary-detail" aria-live="polite">
+        <article class="complementary-panel is-active" data-complementary-panel="ocupacional"><span class="complementary-kicker">SAÚDE OCUPACIONAL</span><h3>Saúde assistencial e ocupacional na mesma leitura.</h3><p>Integração de informações e jornadas para ampliar a compreensão sobre afastamentos, riscos relacionados ao trabalho e necessidades da população.</p><h4>Principais frentes</h4><p class="complementary-tags">Integração de dados · Afastamentos · Retorno ao trabalho · Indicadores · Prevenção</p><div class="complementary-result"><strong>Valor para a empresa</strong><p>Uma visão mais conectada entre benefício, saúde e contexto ocupacional para orientar prioridades e ações.</p></div></article>
+        <article class="complementary-panel" data-complementary-panel="psicossociais"><span class="complementary-kicker">RISCOS PSICOSSOCIAIS</span><h3>Do diagnóstico do risco à construção de uma resposta organizacional.</h3><p>Apoio à identificação, avaliação e gestão dos fatores psicossociais relacionados ao trabalho, conectando diagnóstico, prevenção e direcionamento de ações.</p><h4>Principais frentes</h4><p class="complementary-tags">Avaliação de riscos · Indicadores · Planos de ação · Prevenção · Acompanhamento</p><div class="complementary-result"><strong>Valor para a empresa</strong><p>Mais clareza sobre fatores organizacionais relevantes e uma base estruturada para priorizar medidas preventivas.</p></div></article>
+        <article class="complementary-panel" data-complementary-panel="ergonomia"><span class="complementary-kicker">ERGONOMIA</span><h3>Condições de trabalho analisadas para orientar prevenção.</h3><p>Avaliação das condições e exigências do trabalho para identificar oportunidades de melhoria e apoiar ações voltadas à prevenção de agravos.</p><h4>Principais frentes</h4><p class="complementary-tags">Avaliação · Riscos ergonômicos · Priorização · Recomendações · Prevenção</p><div class="complementary-result"><strong>Valor para a empresa</strong><p>Decisões mais direcionadas sobre condições de trabalho, prevenção e prioridades de intervenção.</p></div></article>
+        <article class="complementary-panel" data-complementary-panel="vacinacao"><span class="complementary-kicker">CAMPANHAS DE VACINAÇÃO</span><h3>Prevenção que chega até a empresa.</h3><p>Planejamento e organização de campanhas corporativas de imunização de acordo com o perfil, a estratégia e as necessidades de cada organização.</p><h4>Principais frentes</h4><p class="complementary-tags">Planejamento · Elegibilidade · Campanhas corporativas · Comunicação · Acompanhamento</p><div class="complementary-result"><strong>Valor para a empresa</strong><p>Mais acesso à prevenção com uma jornada organizada para empresa e colaboradores.</p></div></article>
+        <article class="complementary-panel" data-complementary-panel="pbm"><span class="complementary-kicker">PBM</span><h3>Acesso a medicamentos como extensão da estratégia de cuidado.</h3><p>Programas de benefício em medicamentos que complementam a estratégia de saúde e podem apoiar acesso, continuidade do cuidado e valorização do benefício.</p><h4>Principais frentes</h4><p class="complementary-tags">Medicamentos · Acesso · Benefício corporativo · Jornada de cuidado · Engajamento</p><div class="complementary-result"><strong>Valor para a empresa</strong><p>Uma camada adicional de cuidado e benefício, integrada às necessidades da população e à estratégia corporativa.</p></div></article>
       </div>
-
-      <article class="orbit-service orbit-saude">
-        <h3>Saúde ocupacional</h3>
-        <p>Integração entre saúde assistencial e ocupacional para ampliar a leitura da população, dos afastamentos e dos riscos relacionados ao trabalho.</p>
-      </article>
-
-      <article class="orbit-service orbit-riscos">
-        <h3>Riscos psicossociais</h3>
-        <p>Prevenção, saúde mental e contexto organizacional conectados à gestão dos fatores psicossociais.</p>
-      </article>
-
-      <article class="orbit-service orbit-ergonomia">
-        <h3>Ergonomia</h3>
-        <p>Avaliação das condições de trabalho para orientar prevenção, prioridades e redução de agravos.</p>
-      </article>
-
-      <article class="orbit-service orbit-vacinacao">
-        <h3>Campanhas de vacinação</h3>
-        <p>Planejamento de campanhas corporativas de imunização conforme o perfil e as necessidades da empresa.</p>
-      </article>
-
-      <article class="orbit-service orbit-pbm">
-        <h3>PBM</h3>
-        <p>Benefício em medicamentos como extensão da estratégia de cuidado, acesso e suporte à saúde.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -658,9 +605,9 @@
   <section class="contact section-pad" id="contato">
     <div class="container contact-layout">
       <div class="contact-copy reveal">
-        <span class="eyebrow">CONVERSA INICIAL</span>
-        <h2>Vamos repensar os benefícios da sua empresa?</h2>
-        <p>Conte um pouco sobre sua empresa e seus benefícios atuais. A primeira conversa é para entender o cenário, as prioridades e onde a Orizon pode fazer sentido.</p>
+        <span class="eyebrow">FALE COM A ORIZON</span>
+        <h2>Conte o cenário. A gente parte daí.</h2>
+        <p>Empresa, benefícios atuais e prioridade. O restante aprofundamos na conversa.</p>
       </div>
 
       <form class="contact-form reveal delay-1" novalidate>
@@ -671,16 +618,19 @@
           <label>Telefone<input type="tel" name="telefone" required autocomplete="tel"></label>
           <label>Número aproximado de colaboradores<input type="number" name="vidas" min="1" required></label>
 
-          <fieldset class="benefits-fieldset">
-            <legend>Benefícios atuais <span>Selecione todos os que se aplicam</span></legend>
-            <div class="benefits-options">
+          <fieldset class="benefits-fieldset benefits-multiselect">
+            <legend>Benefícios atuais</legend>
+            <button class="benefits-trigger" type="button" aria-expanded="false" aria-controls="benefitsMenu">
+              <span class="benefits-trigger-text">Selecione os benefícios</span><span class="benefits-trigger-arrow" aria-hidden="true">⌄</span>
+            </button>
+            <div class="benefits-menu" id="benefitsMenu" hidden>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Plano de saúde"><span>Plano de saúde</span></label>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Plano odontológico"><span>Plano odontológico</span></label>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Seguro de vida"><span>Seguro de vida</span></label>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Previdência privada"><span>Previdência privada</span></label>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Benefícios flexíveis"><span>Benefícios flexíveis</span></label>
               <label class="check-option"><input type="checkbox" name="beneficios" value="Outros"><span>Outros</span></label>
-              <label class="check-option"><input type="checkbox" name="beneficios" value="Nenhum atualmente"><span>Nenhum atualmente</span></label>
+              <label class="check-option check-option-none"><input type="checkbox" name="beneficios" value="Nenhum atualmente"><span>Nenhum atualmente</span></label>
             </div>
           </fieldset>
 
@@ -700,7 +650,7 @@
           </label>
 
           <label class="message-field">Conte um pouco sobre o que sua empresa precisa <span>(opcional)</span>
-            <textarea name="mensagem" rows="4" maxlength="1500" placeholder="Ex.: queremos revisar o plano de saúde, reduzir custos, avaliar benefícios ou entender oportunidades para nossa empresa."></textarea>
+            <textarea name="mensagem" rows="3" maxlength="1500"></textarea>
           </label>
         </div>
 

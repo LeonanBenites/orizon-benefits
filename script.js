@@ -359,3 +359,99 @@
     if (window.innerWidth <= 760) explorer.querySelector('.program-detail')?.scrollIntoView({behavior:'smooth',block:'nearest'});
   }));
 })();
+
+// Soluções Complementares — navegação compacta
+(() => {
+  const explorer = document.querySelector('[data-complementary]');
+  if (!explorer) return;
+  const tabs = [...explorer.querySelectorAll('.complementary-tab')];
+  const panels = [...explorer.querySelectorAll('.complementary-panel')];
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    const key = tab.dataset.complementaryKey;
+    tabs.forEach(t => { const active = t === tab; t.classList.toggle('is-active', active); t.setAttribute('aria-selected', active ? 'true' : 'false'); });
+    panels.forEach(panel => panel.classList.toggle('is-active', panel.dataset.complementaryPanel === key));
+    if (window.innerWidth <= 760) explorer.querySelector('.complementary-detail')?.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }));
+})();
+
+/* Operations journey — contextual detail without leaving the section */
+(() => {
+  const root = document.querySelector('[data-operations-journey]');
+  if (!root) return;
+  const detail = root.querySelector('.operation-detail');
+  const buttons = [...root.querySelectorAll('.operation-step')];
+  const content = {
+    cadastro:{kicker:'01 · CADASTRO & MOVIMENTAÇÕES',title:'Uma base correta é o primeiro passo para uma operação que funciona.',text:'Inclusões, exclusões, alterações e acompanhamento da base de beneficiários, com organização dos movimentos e atenção aos prazos de cada operadora.',tags:['Inclusões','Exclusões','Alterações','Elegibilidade']},
+    atendimento:{kicker:'02 · ATENDIMENTO',title:'O benefício precisa funcionar também quando o colaborador precisa dele.',text:'Apoio à jornada do colaborador em demandas relacionadas ao benefício, organizando solicitações, orientações e encaminhamentos ao longo do atendimento.',tags:['Orientação','Solicitações','Acompanhamento','Experiência']},
+    conciliacao:{kicker:'03 · CONCILIAÇÃO CADASTRAL',title:'Divergências pequenas na base podem se transformar em problemas grandes na operação.',text:'Confronto entre bases disponibilizadas pela empresa e registros das operadoras para identificação de inconsistências, diferenças cadastrais e necessidades de regularização.',tags:['Bases','Divergências','Validação','Regularização']},
+    faturamento:{kicker:'04 · CONFERÊNCIA DE FATURAMENTO',title:'Conferir a cobrança é entender o que está por trás de cada valor.',text:'Análise das informações cadastrais, financeiras e contratuais relacionadas à cobrança, apoiando a identificação de divergências e pontos que demandem esclarecimento.',tags:['Faturas','Cadastro','Contrato','Divergências']},
+    rede:{kicker:'05 · REDE',title:'A rede assistencial faz parte da experiência real do benefício.',text:'Leitura das informações disponíveis sobre rede e utilização para apoiar demandas de acesso, contexto assistencial e necessidades específicas da população atendida.',tags:['Rede credenciada','Acesso','Utilização','Contexto']},
+    operadoras:{kicker:'06 · INTERLOCUÇÃO COM OPERADORAS',title:'Quando a situação exige articulação, a Orizon ajuda a conectar as partes certas.',text:'Acompanhamento de situações que demandem interação entre empresa, beneficiário e operadora, com organização das informações e condução dos pontos necessários para evolução da demanda.',tags:['Articulação','Operadoras','Acompanhamento','Resolução']}
+  };
+  function activate(btn){
+    const item=content[btn.dataset.operation]; if(!item) return;
+    buttons.forEach(b=>{const active=b===btn;b.classList.toggle('is-active',active);b.setAttribute('aria-selected',String(active));});
+    detail.classList.add('is-switching');
+    window.setTimeout(()=>{
+      detail.querySelector('.operation-detail-kicker').textContent=item.kicker;
+      detail.querySelector('h3').textContent=item.title;
+      detail.querySelector('p').textContent=item.text;
+      detail.querySelector('.operation-detail-tags').innerHTML=item.tags.map(t=>`<span>${t}</span>`).join('');
+      detail.classList.remove('is-switching');
+    },120);
+  }
+  buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>activate(btn));
+    btn.addEventListener('mouseenter',()=>{if(window.matchMedia('(hover:hover)').matches) activate(btn)});
+    btn.addEventListener('keydown',e=>{
+      const i=buttons.indexOf(btn); let next=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown') next=buttons[(i+1)%buttons.length];
+      if(e.key==='ArrowLeft'||e.key==='ArrowUp') next=buttons[(i-1+buttons.length)%buttons.length];
+      if(next){e.preventDefault();next.focus();activate(next)}
+    });
+  });
+})();
+
+/* =========================================================
+   Contact — compact multi-select for current benefits
+   ========================================================= */
+(() => {
+  const fieldset = document.querySelector('.benefits-multiselect');
+  if (!fieldset) return;
+  const trigger = fieldset.querySelector('.benefits-trigger');
+  const menu = fieldset.querySelector('.benefits-menu');
+  const text = fieldset.querySelector('.benefits-trigger-text');
+  const checks = [...fieldset.querySelectorAll('input[name="beneficios"]')];
+  const none = checks.find(c => c.value === 'Nenhum atualmente');
+
+  const render = () => {
+    const selected = checks.filter(c => c.checked).map(c => c.value);
+    if (!selected.length) text.textContent = 'Selecione os benefícios';
+    else if (selected.length <= 2) text.textContent = selected.join(' · ');
+    else text.textContent = `${selected.length} benefícios selecionados`;
+  };
+
+  const setOpen = open => {
+    trigger.setAttribute('aria-expanded', String(open));
+    menu.hidden = !open;
+  };
+
+  trigger.addEventListener('click', () => setOpen(trigger.getAttribute('aria-expanded') !== 'true'));
+
+  checks.forEach(check => check.addEventListener('change', () => {
+    if (check === none && check.checked) {
+      checks.forEach(c => { if (c !== none) c.checked = false; });
+    } else if (check !== none && check.checked && none) {
+      none.checked = false;
+    }
+    render();
+  }));
+
+  document.addEventListener('click', e => {
+    if (!fieldset.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { setOpen(false); trigger.focus(); }
+  });
+  render();
+})();
